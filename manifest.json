@@ -1,12 +1,15 @@
 {
     "name": "Request Control",
     "description": "redirect and modify web requests",
-    "options_page": "index.html",
+    "options_ui": {
+        "page": "index.html",
+        "open_in_tab": true
+    },
     "manifest_version": 3,
     "version": "1.0.0",
     "action": {},
     "background": {
-        "service_worker": "background.js"
+        "scripts": ["background.js"]
     },
     "permissions": [
         "declarativeNetRequest",

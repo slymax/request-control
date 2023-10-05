@@ -28,7 +28,15 @@ const unregisterServiceWorkers = input => {
         return text.includes(domain) || includesEscapedDomain ? origin : false;
     }).filter(Boolean);
 
-    return chrome.browsingData.remove({ origins }, {
+    const options = {};
+
+    if (browser) {
+        options.hostnames = origins.map(origin => new URL(origin).hostname);
+    } else {
+        options.origins = origins;
+    }
+
+    return chrome.browsingData.remove(options, {
         "serviceWorkers": true
     });
 };
