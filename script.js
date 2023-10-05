@@ -7,14 +7,37 @@ languages.setMonarchTokensProvider("language", {
     tokenizer: { root: [...config.tokens, [/^#.*/, "comment"]] }
 });
 
-editor.defineTheme("theme", {
+editor.defineTheme("light", {
     rules: [
         { token: "highlight", fontStyle: "bold" },
         { token: "comment", foreground: "#9e9e9e" }
     ],
-    colors: { "editor.foreground": "#000000" },
+    colors: {
+        "editor.foreground": "#000000",
+        "editor.background": "#ffffff"
+    },
     base: "vs"
 });
+
+editor.defineTheme("dark", {
+    rules: [
+        { token: "highlight", fontStyle: "bold" },
+        { token: "comment", foreground: "#9e9e9e" }
+    ],
+    colors: {
+        "editor.foreground": "#ffffff",
+        "editor.background": "#323639"
+    },
+    base: "vs"
+});
+
+const theme = window.matchMedia("(prefers-color-scheme: dark)");
+
+theme.addEventListener("change", event => {
+    editor.setTheme(event.matches ? "dark" : "light");
+});
+
+editor.setTheme(theme.matches ? "dark" : "light");
 
 const input = editor.create(document.getElementById("editor"), {
     value: localStorage.value || config.value,

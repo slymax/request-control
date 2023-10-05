@@ -25,3 +25,10 @@
     cursor: default;
     opacity: 0.5;
 }
+
+@media(prefers-color-scheme:dark) {
+    body {
+        background-color: #323639;
+        color: #ffffff;
+    }
+}

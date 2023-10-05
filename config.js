@@ -15,7 +15,6 @@ export default {
         "language": "language",
         "lineNumbers": "off",
         "contextmenu": false,
-        "theme": "theme",
         "wordWrap": "on",
         "folding": false,
         "links": false,
