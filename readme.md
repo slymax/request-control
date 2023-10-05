@@ -120,3 +120,4 @@ wget -qO monaco.js https://esm.run/monaco-editor
 - [ ] Allow setting request headers ([ModifyHeaderInfo](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#type-ModifyHeaderInfo))
 - [ ] Allow setting query parameters ([QueryTransform](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/#type-QueryTransform))
 - [ ] Add support for dark mode
+- [ ] Firefox support
