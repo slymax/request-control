@@ -28,7 +28,7 @@ const unregisterServiceWorkers = input => {
         return text.includes(domain) || includesEscapedDomain ? origin : false;
     }).filter(Boolean);
 
-    return chrome.browsingData.remove({ origins }, {
+    return origins.length && chrome.browsingData.remove({ origins }, {
         "serviceWorkers": true
     });
 };
