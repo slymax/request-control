@@ -22,9 +22,10 @@ const input = editor.create(document.getElementById("editor"), {
 });
 
 const unregisterServiceWorkers = input => {
+    const text = input.split("\n").filter(line => /^\w+/.test(line)).join("\n");
     const origins = Object.entries(config.serviceWorkers).map(([domain, origin]) => {
-        const includesEscapedDomain = input.includes(domain.replace(".", "\\."));
-        return input.includes(domain) || includesEscapedDomain ? origin : false;
+        const includesEscapedDomain = text.includes(domain.replace(".", "\\."));
+        return text.includes(domain) || includesEscapedDomain ? origin : false;
     }).filter(Boolean);
 
     return chrome.browsingData.remove({ origins }, {
