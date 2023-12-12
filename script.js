@@ -4,7 +4,11 @@ import { editor, languages } from "./monaco.js";
 
 languages.register({ id: "language" });
 languages.setMonarchTokensProvider("language", {
-    tokenizer: { root: [...config.tokens, [/^#.*/, "comment"]] }
+    tokenizer: {
+        root: [...config.highlightedTokens.map(token => {
+            return [token.toUpperCase(), "highlight"]
+        }), [/^#.*/, "comment"]]
+    }
 });
 
 editor.defineTheme("theme", {
@@ -16,9 +20,12 @@ editor.defineTheme("theme", {
     base: "vs"
 });
 
+const dedent = input => input.trim().replace(/^ +/gm, "");
+const defaultValue = dedent(config.defaultValue);
+
 const input = editor.create(document.getElementById("editor"), {
-    value: localStorage.value || config.value,
-    ...config.editor
+    value: localStorage.value || defaultValue,
+    ...config.editorSettings
 });
 
 const unregisterServiceWorkers = input => {
@@ -62,7 +69,7 @@ document.addEventListener("keydown", e => {
     }
 });
 
-!localStorage.value && save(config.value);
+!localStorage.value && save(defaultValue);
 
 input.onDidChangeModelContent(() => {
     button.disabled = false;
