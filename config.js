@@ -5,10 +5,9 @@ export default {
         "youtube.com": "https://www.youtube.com"
     },
     editorSettings: {
-        "renderLineHighlight": "none",
         "occurrencesHighlight": false,
         "scrollBeyondLastLine": false,
-        "minimap": { "enabled": false },
+        "renderLineHighlight": "none",
         "selectionHighlight": false,
         "quickSuggestions": false,
         "overviewRulerLanes": 0,
@@ -23,13 +22,50 @@ export default {
             "useShadows": false,
             "horizontal": "hidden",
             "vertical": "hidden"
+        },
+        "minimap": {
+            "enabled": false
         }
     },
-    highlightedTokens: ["allow", "block", "for", "fragment", "from", "host", "password", "path", "port", "query", "redirect", "remove", "scheme", "set", "to", "username"],
+    resourceTypes: [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "webtransport",
+        "webbundle",
+        "other"
+    ],
+    highlightedTokens: [
+        "allow",
+        "block",
+        "for",
+        "fragment",
+        "from",
+        "host",
+        "password",
+        "path",
+        "port",
+        "query",
+        "redirect",
+        "remove",
+        "scheme",
+        "set",
+        "to",
+        "username"
+    ],
     defaultValue: `
         # Welcome to the Request Control Editor!
 
-        # Below are some examples to get you started. You can read the full documentation at https://github.com/slymax/request-control.
+        # You can read the full documentation at https://github.com/slymax/request-control. Here are some examples to get you started:
 
         # redirect mobile wikipedia to desktop version
         # REDIRECT ^https://(.*?).m.wikipedia.org TO https://$1.wikipedia.org
