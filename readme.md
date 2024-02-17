@@ -58,7 +58,7 @@ https://chrome.google.com/webstore/detail/request-control/gkadogdmakibilhnklflcg
         <td>QUERY</td>
         <td><code>?&#8288;useskin=vector</code></td>
         <td>FOR</td>
-        <td><code>https://en.wikipedia.org/wiki/(.*)</code></td>
+        <td><code>https://en.wikipedia.org/wiki</code></td>
     </tr>
     <tr>
         <td>REMOVE</td>
@@ -69,9 +69,9 @@ https://chrome.google.com/webstore/detail/request-control/gkadogdmakibilhnklflcg
     </tr>
     <tr>
         <td>REDIRECT</td>
-        <td><code>https://(.*?).m.wikipedia.org/(.*)</code></td>
+        <td><code>https://(.*?).m.wikipedia.org</code></td>
         <td>TO</td>
-        <td><code>https://$1.wikipedia.org/$2</code></td>
+        <td><code>https://$1.wikipedia.org</code></td>
         <td>-</td>
     </tr>
     <tr>
@@ -111,7 +111,7 @@ Chrome uses google's [re2](https://github.com/google/re2/wiki/Syntax) for evalua
 To grab the latest version of `monaco-editor`, run the following command:
 
 ```sh
-wget -qO monaco.js https://esm.run/monaco-editor
+curl -Lso monaco.js https://esm.run/monaco-editor
 ```
 
 ## Roadmap
