@@ -1,7 +1,6 @@
 export default {
     serviceWorkers: {
         "twitter.com": "https://twitter.com",
-        "youtu.be": "https://www.youtube.com",
         "youtube.com": "https://www.youtube.com"
     },
     editorSettings: {
@@ -80,6 +79,6 @@ export default {
         # REDIRECT ^https://twitter.com TO https://nitter.net
 
         # enforce https for all urls
-        # SET SCHEME https FOR http://(.*)
+        # SET SCHEME https FOR ^http:
     `
 };
