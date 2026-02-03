@@ -6,7 +6,7 @@
         "open_in_tab": true
     },
     "manifest_version": 3,
-    "version": "1.0.0",
+    "version": "1.0.2",
     "action": {},
     "background": {
         "scripts": ["background.js"]
