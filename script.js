@@ -20,9 +20,9 @@ editor.defineTheme("theme", {
     base: "vs"
 });
 
+const dedent = input => input.trim().replace(/^ +/gm, "");
 const defaultValue = dedent(config.defaultValue);
 
-const dedent = input => input.trim().replace(/^ +/gm, "");
 const input = editor.create(document.getElementById("editor"), {
     value: localStorage.value || defaultValue,
     ...config.editorSettings
@@ -35,15 +35,7 @@ const unregisterServiceWorkers = input => {
         return text.includes(domain) || includesEscapedDomain ? origin : false;
     }).filter(Boolean);
 
-    const options = {};
-
-    if (browser) {
-        options.hostnames = origins.map(origin => new URL(origin).hostname);
-    } else {
-        options.origins = origins;
-    }
-
-    return chrome.browsingData.remove(options, {
+    return origins.length && chrome.browsingData.remove({ origins }, {
         "serviceWorkers": true
     });
 };

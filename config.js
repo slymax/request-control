@@ -37,8 +37,6 @@ export default {
         "csp_report",
         "media",
         "websocket",
-        "webtransport",
-        "webbundle",
         "other"
     ],
     highlightedTokens: [

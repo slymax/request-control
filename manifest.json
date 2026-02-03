@@ -1,10 +1,7 @@
 {
     "name": "Request Control",
     "description": "redirect and modify web requests",
-    "options_ui": {
-        "page": "index.html",
-        "open_in_tab": true
-    },
+    "options_page": "index.html",
     "manifest_version": 3,
     "version": "1.0.2",
     "action": {},
