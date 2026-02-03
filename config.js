@@ -18,9 +18,7 @@ export default {
         "folding": false,
         "links": false,
         "scrollbar": {
-            "useShadows": false,
-            "horizontal": "hidden",
-            "vertical": "hidden"
+            "useShadows": false
         },
         "minimap": {
             "enabled": false
